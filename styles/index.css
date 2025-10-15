@@ -1,0 +1,343 @@
+:root {
+  /* 颜色变量 */
+  --color-parchment: #F8F4E9;
+  --color-light-taupe: #E8DFD2;
+  --color-warm-gray: #5A5243;
+  --color-ink-black: #2A2520;
+  --color-antique-gold: #B38E5D;
+  --color-patina-green: #6B7B6E;
+  --color-faded-jade: #8AAE9D;
+  --color-dull-ruby: #B76E79;
+  --color-dusk-amethyst: #9D8CA0;
+  --color-deep-lapis: #6F8FA2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: var(--color-parchment);
+  color: var(--color-warm-gray);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cinzel Decorative', cursive;
+  color: var(--color-ink-black);
+  /*margin-bottom: 1rem;*/
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 头部样式 */
+header {
+  background: linear-gradient(rgba(42, 37, 32, 0.9), rgba(42, 37, 32, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%235A5243"/><path d="M0 0L100 100M100 0L0 100" stroke="%23B38E5D" stroke-width="1"/></svg>');
+  background-size: cover;
+  color: var(--color-parchment);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  margin-bottom: 2rem;
+}
+
+.logo h1 {
+  font-size: 3rem;
+  color: var(--color-parchment);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.logo .subtitle {
+  font-size: 1.5rem;
+  color: var(--color-antique-gold);
+  letter-spacing: 3px;
+  font-style: italic;
+}
+
+.enter-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 12px 30px;
+  border: 2px solid var(--color-antique-gold);
+  color: var(--color-antique-gold);
+  text-decoration: none;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.enter-btn:hover {
+  background-color: var(--color-antique-gold);
+  color: var(--color-ink-black);
+}
+
+/* 导航栏样式 */
+nav {
+  background-color: var(--color-light-taupe);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 1.5rem;
+  color: var(--color-ink-black);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  color: var(--color-warm-gray);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a i {
+  margin-right: 0.5rem;
+}
+
+.nav-links a:hover {
+  color: var(--color-antique-gold);
+}
+
+/* 主要内容区域 */
+main {
+  padding: 4rem 0;
+}
+
+main section:nth-child(even) {
+  background-color: var(--color-light-taupe);
+  border-radius: 5px;
+}
+
+.section-container {
+  padding:2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom:1.5rem;
+  position: relative;
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: var(--color-antique-gold);
+  margin: 1rem auto;
+}
+
+/* 卡片样式 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--color-light-taupe);
+  border: 1px solid var(--color-antique-gold);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-antique-gold);
+  display: flex;
+  align-items: center;
+}
+
+.card-header i {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.card-footer {
+  padding: 1rem 1.5rem;
+  background-color: rgba(179, 142, 93, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.tag-jade {
+  background-color: var(--color-faded-jade);
+}
+
+.tag-ruby {
+  background-color: var(--color-dull-ruby);
+}
+
+.tag-amethyst {
+  background-color: var(--color-dusk-amethyst);
+}
+
+.tag-lapis {
+  background-color: var(--color-deep-lapis);
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.about-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.poem-container {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.5rem;
+  line-height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url("../images/tale.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.poem-container p {
+  margin:1.5rem 0.5rem;
+  color: var(--color-parchment);
+  border-radius: 5px;
+}
+
+/* 页脚样式 */
+footer {
+  background-color: var(--color-ink-black);
+  color: var(--color-light-taupe);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-antique-gold);
+}
+
+.footer-subtitle {
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.social-links a {
+  color: var(--color-light-taupe);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--color-antique-gold);
+}
+
+.copyright {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-antique-gold);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    margin-top: 1rem;
+  }
+
+  .nav-links li {
+    margin: 0 0.5rem;
+  }
+
+  .logo h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
