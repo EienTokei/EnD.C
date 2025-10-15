@@ -12,7 +12,7 @@
 <!-- 入口封面 -->
 <header id="cover">
   <div class="logo">
-    <h1>永恒童话回廊</h1>
+    <h1>永遠の童話回廊</h1>
     <div class="subtitle">EnD.C - Eien no Douwa Corridor</div>
   </div>
   <a href="#main-content" class="enter-btn">踏入回廊</a>
@@ -22,6 +22,9 @@
 <nav>
   <div class="container nav-container">
     <div class="nav-logo">永恒童话回廊</div>
+    <button class="nav-toggle" aria-label="切换导航">
+      <i class="fas fa-bars"></i>
+    </button>
     <ul class="nav-links">
       <li><a href="#stories"><i class="fas fa-book"></i> 回廊纪事</a></li>
       <li><a href="#creations"><i class="fas fa-feather-alt"></i> 墨水瓶与羽毛笔</a></li>
@@ -198,6 +201,35 @@
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mouseenter', function() {
       this.style.transition = 'all 0.3s ease';
+    });
+  });
+  
+  // 获取汉堡按钮和导航链接
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const toggleIcon = navToggle.querySelector('i');
+  
+  // 点击按钮触发切换
+  navToggle.addEventListener('click', () => {
+    // 给导航链接加/删 active 类（控制显隐）
+    navLinks.classList.toggle('active');
+    
+    // 切换图标（展开时变叉号，收起时变 bars）
+    if (toggleIcon.classList.contains('fa-bars')) {
+      toggleIcon.classList.replace('fa-bars', 'fa-times');
+    } else {
+      toggleIcon.classList.replace('fa-times', 'fa-bars');
+    }
+  });
+  
+  // 可选优化：点击导航项后自动收起导航（移动端）
+  const navItems = navLinks.querySelectorAll('a');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 768) { // 仅在移动端生效
+        navLinks.classList.remove('active');
+        toggleIcon.classList.replace('fa-times', 'fa-bars');
+      }
     });
   });
 </script>

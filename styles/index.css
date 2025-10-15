@@ -128,12 +128,28 @@ nav {
 .nav-logo {
   font-family: 'Cinzel Decorative', cursive;
   font-size: 1.5rem;
-  color: var(--color-ink-black);
+  color: var(--color-antique-gold);
+}
+
+.nav-toggle {
+  display: none; /* 桌面端隐藏 */
+  background: transparent; /* 透明背景 */
+  border: none; /* 无边框 */
+  color: var(--color-ink-black); /* 图标颜色 */
+  font-size: 1.5rem; /* 图标大小 */
+  cursor: pointer; /* 鼠标悬浮变指针 */
+  padding: 0.5rem;
+}
+
+.nav-toggle i {
+  color: var(--color-antique-gold);
 }
 
 .nav-links {
   display: flex;
   list-style: none;
+  transition: max-height 0.3s ease;
+  max-height: 300px;
 }
 
 .nav-links li {
@@ -157,13 +173,27 @@ nav {
 }
 
 @media (max-width: 768px) {
+  .nav-container {
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
   .nav-links {
     flex-direction: column;
     width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .nav-links.active {
+    max-height: 300px;
   }
 
   .nav-links li {
-    margin: 0.5rem 0;
+    margin: 0.3rem 0;
     width: 100%;
     text-align: center;
   }
@@ -314,10 +344,17 @@ main section:nth-child(even) {
   border-radius: 5px;
 }
 
+@media (max-width: 768px) {
+  .poem-container {
+    line-height: 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+  }
+}
+
 .poem-container p {
   margin:1.5rem 0;
   color: var(--color-parchment);
-  border-radius: 5px;
   font-family: 'Cinzel Decorative', cursive;
 }
 
@@ -325,7 +362,7 @@ main section:nth-child(even) {
 footer {
   background-color: var(--color-ink-black);
   color: var(--color-light-taupe);
-  padding: 2rem 0;
+  padding: 1rem 0;
   text-align: center;
 }
 
@@ -344,7 +381,7 @@ footer {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .social-links a {
@@ -358,7 +395,7 @@ footer {
 }
 
 .copyright {
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 0.9rem;
   color: var(--color-antique-gold);
 }
