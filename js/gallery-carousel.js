@@ -37,7 +37,7 @@ class GalleryCarousel {
         return [
             {
                 id: 1,
-                image: '../images/about-hover.webp',
+                image: './images/about-hover.webp',
                 title: '时钟塔的Alice',
                 description: '那指的不是“你”，我不需要“你”。',
                 game: '魔女恋爱日记',
@@ -45,7 +45,7 @@ class GalleryCarousel {
             },
             {
                 id: 2,
-                image: '../images/tale-hover.webp',
+                image: './images/tale-hover.webp',
                 title: '幻想列车的咕隆咕隆',
                 description: '奏响吧，我的意志',
                 game: '宝石夜乐园',
