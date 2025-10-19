@@ -1,0 +1,216 @@
+:root {
+  /* 颜色变量 */
+  --color-parchment: #F8F4E9;
+  --color-light-taupe: #E8DFD2;
+  --color-warm-gray: #5A5243;
+  --color-ink-black: #2A2520;
+  --color-antique-gold: #B38E5D;
+  --color-patina-green: #6B7B6E;
+  --color-faded-jade: #8AAE9D;
+  --color-dull-ruby: #B76E79;
+  --color-dusk-amethyst: #9D8CA0;
+  --color-deep-lapis: #6F8FA2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: var(--color-parchment);
+  color: var(--color-warm-gray);
+  line-height: 1.6;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
+  color: var(--color-ink-black);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* 导航栏样式 */
+nav {
+  background-color: var(--color-light-taupe);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-logo {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 1.5rem;
+  color: var(--color-antique-gold);
+}
+
+.nav-toggle {
+  display: none; /* 桌面端隐藏 */
+  background: transparent; /* 透明背景 */
+  border: none; /* 无边框 */
+  color: var(--color-antique-gold); /* 图标颜色 */
+  font-size: 1.5rem; /* 图标大小 */
+  cursor: pointer; /* 鼠标悬浮变指针 */
+  padding: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  transition: max-height 0.3s ease;
+  max-height: 300px;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
+  color: var(--color-warm-gray);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a i {
+  margin-right: 0.5rem;
+}
+
+.nav-links a:hover {
+  color: var(--color-antique-gold);
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+  }
+
+  .nav-links li {
+    margin: 0.3rem 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+main {
+  min-height: 100vh;
+}
+
+/* 页脚样式 */
+footer {
+  background-color: var(--color-ink-black);
+  color: var(--color-light-taupe);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-antique-gold);
+}
+
+.footer-subtitle {
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.social-links a {
+  color: var(--color-light-taupe);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--color-antique-gold);
+}
+
+.copyright {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-antique-gold);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.tag-jade {
+  background-color: var(--color-faded-jade);
+}
+
+.tag-ruby {
+  background-color: var(--color-dull-ruby);
+}
+
+.tag-amethyst {
+  background-color: var(--color-dusk-amethyst);
+}
+
+.tag-lapis {
+  background-color: var(--color-deep-lapis);
+}

@@ -1,0 +1,481 @@
+
+/* 魔法引用框 */
+.magic-quote {
+  background: linear-gradient(135deg, rgba(179, 142, 93, 0.2), rgba(143, 110, 67, 0.05));
+  border-left: 4px solid var(--color-antique-gold);
+  padding: 1.5rem 2rem;
+  margin: 1rem 0;
+  position: relative;
+  border-radius: 0 8px 8px 0;
+  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
+}
+
+.magic-quote:before {
+  content: "";
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 4rem;
+  color: var(--color-antique-gold);
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  opacity: 0.3;
+}
+
+.magic-quote-footer {
+  text-align: right;
+  font-style: italic;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-warm-gray);
+}
+
+/* 宝石信息卡 */
+.gem-card {
+  display: flex;
+  background: var(--color-parchment);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 2rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(179, 142, 93, 0.2);
+  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
+}
+
+.gem-color {
+  width: 1rem;
+  flex-shrink: 0;
+}
+
+.gem-color.jade { background-color: var(--color-faded-jade); }
+.gem-color.ruby { background-color: var(--color-dull-ruby); }
+.gem-color.amethyst { background-color: var(--color-dusk-amethyst); }
+.gem-color.lapis { background-color: var(--color-deep-lapis); }
+
+.gem-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.gem-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.gem-title i {
+  margin-right: 0.5rem;
+  color: var(--color-antique-gold);
+}
+
+/* 童话时间线 */
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-antique-gold);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.timeline-item:before {
+  content: '';
+  position: absolute;
+  left: -0.5rem;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--color-antique-gold);
+  border: 3px solid var(--color-parchment);
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: var(--color-ink-black);
+  margin-bottom: 0.5rem;
+}
+
+/* 魔法步骤 */
+.spell-steps {
+  counter-reset: step-counter;
+  margin: 2rem 0;
+  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
+}
+
+.spell-step {
+  display: flex;
+  margin-bottom: 1.5rem;
+  background: var(--color-parchment);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--color-dusk-amethyst);
+}
+
+.spell-step:before {
+  counter-increment: step-counter;
+  content: counter(step-counter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-dusk-amethyst);
+  color: white;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+/* 角色对比表 */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
+}
+
+.comparison-table th {
+  background-color: var(--color-antique-gold);
+  color: var(--color-ink-black);
+  padding: 1rem;
+  text-align: left;
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+.comparison-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(179, 142, 93, 0.2);
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: rgba(179, 142, 93, 0.05);
+}
+
+/* 童话提示框 */
+.story-tip {
+  background: linear-gradient(135deg, rgba(143, 110, 67, 0.2), rgba(179, 142, 93, 0.05));
+  border: 1px solid rgba(179, 142, 93, 0.3);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  position: relative;
+  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
+}
+
+.story-tip:before {
+  content: '\f0eb';
+  font-family: 'Font Awesome 6 Free',serif;
+  font-weight: 900;
+  position: absolute;
+  top: -0.8rem;
+  left: 1.5rem;
+
+  padding: 0 0.5rem;
+  color: var(--color-antique-gold);
+}
+
+.tip-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--color-ink-black);
+}
+
+/* 魔法评分 */
+.magic-rating {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0 1rem 3rem;
+  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
+}
+
+.rating-stars {
+  display: flex;
+  margin-right: 1rem;
+}
+
+.rating-stars i {
+  color: var(--color-antique-gold);
+  margin-right: 0.2rem;
+}
+
+.rating-label {
+  font-weight: bold;
+  color: var(--color-ink-black);
+  min-width: 120px;
+}
+
+/* 宝石标签组 */
+.gem-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.gem-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.gem-tag i {
+  margin-right: 0.3rem;
+}
+
+.tag-jade { background-color: var(--color-faded-jade); }
+.tag-ruby { background-color: var(--color-dull-ruby); }
+.tag-amethyst { background-color: var(--color-dusk-amethyst); }
+.tag-lapis { background-color: var(--color-deep-lapis); }
+.tag-gold { background-color: var(--color-antique-gold); }
+
+/* 折叠内容块 */
+.spoiler-box {
+  margin: 2rem 0;
+  border: 1px solid rgba(179, 142, 93, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
+}
+
+.spoiler-header {
+  background-color: rgba(179, 142, 93, 0.1);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.spoiler-content {
+  margin: 1.5rem 0;
+  padding: 0 1.5rem;
+  /*display: none;*/
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease;
+}
+
+.spoiler-box.active .spoiler-content {
+  display: block;
+  max-height: 500px;
+}
+
+/* 魔法统计数据 */
+.magic-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
+}
+
+.stat-card {
+  background: var(--color-parchment);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid var(--color-dusk-amethyst);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-ink-black);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--color-warm-gray);
+}
+
+/* 童话分割线 */
+.story-divider {
+  display: flex;
+  align-items: center;
+  margin: 2.5rem 0;
+  color: var(--color-antique-gold);
+}
+
+.story-divider:before,
+.story-divider:after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-antique-gold), transparent);
+}
+
+.story-divider i {
+  margin: 0 1rem;
+}
+
+/* 遮罩 */
+/* 魔法文字遮罩基础样式 */
+.text-mask {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.masked-text {
+  background-color: var(--color-warm-gray);
+  color: transparent;
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  user-select: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.masked-text:before {
+  content: '???';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-parchment);
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* 遮罩悬停效果 */
+.text-mask:hover .masked-text {
+  background-color: var(--color-antique-gold);
+}
+
+.text-mask:hover .masked-text:before {
+  color: var(--color-ink-black);
+}
+
+/* 遮罩激活状态 */
+.text-mask.active .masked-text {
+  background-color: transparent;
+  color: var(--color-warm-gray);
+}
+
+.text-mask.active .masked-text:before {
+  display: none;
+}
+
+/* 剧透警告遮罩 */
+.spoiler-mask {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 0.2rem;
+}
+
+.spoiler-text {
+  background-color: var(--color-ink-black);
+  color: transparent;
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  user-select: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.spoiler-text:before {
+  content: '⚠️ 剧透警告';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-parchment);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.spoiler-mask:hover .spoiler-text {
+  background-color: var(--color-dull-ruby);
+}
+
+.spoiler-mask.active .spoiler-text {
+  background-color: transparent;
+  color: var(--color-warm-gray);
+}
+
+.spoiler-mask.active .spoiler-text:before {
+  display: none;
+}
+
+/* 魔法书页遮罩 */
+.page-mask {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 0.2rem;
+}
+
+.page-text {
+  background-color: var(--color-parchment);
+  color: transparent;
+  border: 1px solid var(--color-antique-gold);
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  user-select: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-text:before {
+  content: '取下书签';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-antique-gold);
+  font-size: 0.8rem;
+}
+
+.page-mask:hover .page-text {
+  background-color: rgba(179, 142, 93, 0.1);
+}
+
+.page-mask.active .page-text {
+  background-color: transparent;
+  color: var(--color-warm-gray);
+  border-color: transparent;
+}
+
+.page-mask.active .page-text:before {
+  display: none;
+}

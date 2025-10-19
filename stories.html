@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="./">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <title>恋爱日记 | 永恒童话回廊</title>
+</head>
+<body>
+<!-- 导航栏组件将在此动态加载 -->
+<div id="navbar-container"></div>
+
+<main>
+  <section id="stories">
+    <div class="container section-container">
+      <h2 class="section-title">恋爱日记</h2>
+      <!-- 文章卡片网格 -->
+      <div class="articles-grid">
+        <div class="article-card">
+          <div class="article-card-image" style="background-image: url('https://s3.bmp.ovh/imgs/2025/10/18/21dcacf666dc06aa.webp');"></div>
+          <div class="article-card-content">
+            <h3 class="article-card-title"><a href="./articles/stories/恋彼女的回忆.html">恋彼女的回忆</a></h3>
+            <p class="article-card-excerpt">我还是喜欢悲剧的，喜剧什么的，毕竟不适合我</p>
+            <div class="article-card-meta">
+              <span>2023-12-12</span>
+              <span class="tag tag-ruby">回忆</span>
+            </div>
+          </div>
+        </div>
+        
+<!--        <div class="article-card">-->
+<!--          <div class="article-card-image" style="background-image: url('./images/tale-hover.webp');"></div>-->
+<!--          <div class="article-card-content">-->
+<!--            <h3 class="article-card-title"><a href="#">月社妃的奋斗记：被世界遗忘的少女</a></h3>-->
+<!--            <p class="article-card-excerpt">世界忘记了少女。青色的光芒，让月社妃这位少女的存在看不见。连唯一有记忆的主人公，也是逐渐忘记重要妹妹的命运。</p>-->
+<!--            <div class="article-card-meta">-->
+<!--              <span>2023-08-15</span>-->
+<!--              <span class="tag tag-jade">角色研究</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        -->
+<!--        <div class="article-card">-->
+<!--          <div class="article-card-image" style="background-image: url('./images/tale-hover.webp');"></div>-->
+<!--          <div class="article-card-content">-->
+<!--            <h3 class="article-card-title"><a href="#">纸上魔法使：解析《魔法之书》的叙事结构</a></h3>-->
+<!--            <p class="article-card-excerpt">深入分析《魔法之书》如何通过八本不同颜色的魔法书构建多层次叙事，以及这种结构对角色塑造和主题表达的影响。</p>-->
+<!--            <div class="article-card-meta">-->
+<!--              <span>2023-07-22</span>-->
+<!--              <span class="tag tag-ruby">深度分析</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+      
+    </div>
+  </section>
+</main>
+
+<!-- 页脚组件将在此动态加载 -->
+<div id="footer-container"></div>
+
+<!-- 通用工具 -->
+<script src="./js/common.js"></script>
+<script src="./js/navigation.js"></script>
+
+<!-- 初始化 -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 加载组件
+    loadComponent('navbar', 'navbar-container', { isHomepage: false });
+    loadComponent('footer', 'footer-container');
+  });
+</script>
+
+</body>
+</html>

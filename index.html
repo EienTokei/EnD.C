@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>永恒童话回廊 | EnD.C</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="./styles/index.css">
+  <title>永恒童话回廊 | EnD.C</title>
 </head>
 <body>
 <!-- 入口封面 -->
@@ -18,21 +18,8 @@
   <a href="#main-content" class="enter-btn">踏入回廊</a>
 </header>
 
-<!-- 导航栏 -->
-<nav>
-  <div class="container nav-container">
-    <div class="nav-logo">永恒童话回廊</div>
-    <button class="nav-toggle" aria-label="切换导航">
-      <i class="fas fa-bars"></i>
-    </button>
-    <ul class="nav-links">
-      <li><a href="#stories"><i class="fas fa-book"></i> 恋爱日记</a></li>
-      <li><a href="#creations"><i class="fas fa-feather-alt"></i> 创想庭院</a></li>
-      <li><a href="#gallery"><i class="fas fa-images"></i> 绘卷之厅</a></li>
-      <li><a href="#about"><i class="fas fa-torii-gate"></i> 永恒回廊</a></li>
-    </ul>
-  </div>
-</nav>
+<!-- 导航栏组件将在此动态加载 -->
+<div id="navbar-container"></div>
 
 <!-- 主要内容 -->
 <main id="main-content">
@@ -42,50 +29,10 @@
       <h2 class="section-title">恋爱日记</h2>
       <div class="cards-description">
         <h3>未干的墨迹</h3>
-        <a href="#">查看全部 <i class="fas fa-arrow-right"></i></a>
+        <a href="./stories.html">查看全部 <i class="fas fa-arrow-right"></i></a>
       </div>
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-header">
-            <i class="fas fa-gem" style="color: var(--color-faded-jade);"></i>
-            <h3>翡翠的故事</h3>
-          </div>
-          <div class="card-body">
-            <p>人云，有囚于不幸的少女。人云，那位少女似乎是带来灾难的受诅咒魔法使...</p>
-          </div>
-          <div class="card-footer">
-            <span class="tag tag-jade">评测</span>
-            <a href="#">阅读 <i class="fas fa-scroll"></i></a>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-header">
-            <i class="fas fa-gem" style="color: var(--color-dull-ruby);"></i>
-            <h3>红宝石在纺红线</h3>
-          </div>
-          <div class="card-body">
-            <p>接翡翠开启的故事，是天使编写的恋爱喜剧。系结羁绊的命运红线...</p>
-          </div>
-          <div class="card-footer">
-            <span class="tag tag-ruby">分析</span>
-            <a href="#">阅读 <i class="fas fa-scroll"></i></a>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-header">
-            <i class="fas fa-gem" style="color: var(--color-dusk-amethyst);"></i>
-            <h3>观星少女的都市传说</h3>
-          </div>
-          <div class="card-body">
-            <p>想要填补欠缺的东西，却什么都没有填补。然而时间慢慢逝去，日常在继续...</p>
-          </div>
-          <div class="card-footer">
-            <span class="tag tag-amethyst">神秘</span>
-            <a href="#">阅读 <i class="fas fa-scroll"></i></a>
-          </div>
-        </div>
+      <div class="card-grid" id="stories-cards">
+        <!-- 卡片将由JavaScript动态加载 -->
       </div>
     </div>
   </section>
@@ -94,7 +41,8 @@
   <section id="about">
     <div class="container section-container">
       <h2 class="section-title">永恒回廊</h2>
-      <div class="poem-about">
+      
+      <div class="banner-hero">
         <div class="poem-column">
           <p>什么……</p>
           <p>我吗？</p>
@@ -103,15 +51,16 @@
           <p>我知道的，我知道这一个月以来，你都做了些什么。</p>
           <p>不断玩弄我们的内心，到了下一个月，又会被别的游戏的女主迷的神魂颠倒了吧。</p>
           <p>我都知道的。</p>
-          <p>不过，没关系。 ”恋爱“不就是这种东西吗。</p>
+          <p>不过，没关系。 ”恋爱"不就是这种东西吗。</p>
           <p>只有你跟我留下的故事，还会游荡在这里吧。</p>
           <p>我会在这里，不断的重复与你发生的故事。</p>
           <p>所以，你回去也无妨。</p>
-          <p>那指的不是“你”，我不需要“你”。</p>
+          <p>那指的不是"你"，我不需要"你"。</p>
           <p>所以——</p>
           <p>拜拜。</p>
         </div>
       </div>
+      
       <div class="about-content">
         <div class="about-text">
           <p>「永恒童话回廊」并非一个地点，而是一个概念</p>
@@ -129,58 +78,35 @@
   <section id="creations">
     <div class="container section-container">
       <h2 class="section-title">创想庭院</h2>
-      <div class="poem-creations">
-        <div class="poem-column left-column">
-          <p>闪闪发光</p>
-          <p>转瞬即逝的星星</p>
-          <p>摇摇晃晃</p>
-          <p>晃晃悠悠的平行线</p>
-          <p>试着在纯白的校园上描绘吧</p>
-          <p>将心燃烧</p>
-          <p>用生命制成的墨水记录下来吧</p>
-        </div>
-        <div class="poem-column right-column">
-          <p>不写在纸上也没关系</p>
-          <p>只写在手上也没关系</p>
-          <p>因为故事所必要的</p>
-          <p>只有悲剧和眼泪而已</p>
-          <p>白发赤目指引我们</p>
-          <p>对你而言的最好结局</p>
-          <p>对我而言的最好结局</p>
+      
+      <div class="fullscreen-bg">
+        <div class="poem">
+          <div class="poem-column left-column">
+            <p>闪闪发光</p>
+            <p>转瞬即逝的星星</p>
+            <p>摇摇晃晃</p>
+            <p>晃晃悠悠的平行线</p>
+            <p>试着在纯白的校园上描绘吧</p>
+            <p>将心燃烧</p>
+            <p>用生命制成的墨水记录下来吧</p>
+          </div>
+          <div class="poem-column right-column">
+            <p>不写在纸上也没关系</p>
+            <p>只写在手上也没关系</p>
+            <p>因为故事所必要的</p>
+            <p>只有悲剧和眼泪而已</p>
+            <p>白发赤目指引我们</p>
+            <p>对你而言的最好结局</p>
+            <p>对我而言的最好结局</p>
+          </div>
         </div>
       </div>
       <div class="cards-description">
         <h3>残缺的童话</h3>
-        <a href="#">查看全部 <i class="fas fa-arrow-right"></i></a>
+        <a href="./creations.html">查看全部 <i class="fas fa-arrow-right"></i></a>
       </div>
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-header">
-            <i class="fas fa-feather-alt"></i>
-            <h3>徒留原地的童话</h3>
-          </div>
-          <div class="card-body">
-            <p>装做拼尽全力的样子 实际却悄然放弃。最后 只剩下美好的童话徒留在原地...</p>
-          </div>
-          <div class="card-footer">
-            <span class="tag tag-lapis">同人</span>
-            <a href="#">阅读 <i class="fas fa-scroll"></i></a>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-header">
-            <i class="fas fa-feather-alt"></i>
-            <h3>魔法之书</h3>
-          </div>
-          <div class="card-body">
-            <p>写下的内容会化为现实，非常不可思议的书哦！书会反应打开者的愿望，让书中故事再现现实...</p>
-          </div>
-          <div class="card-footer">
-            <span class="tag tag-jade">设定</span>
-            <a href="#">阅读 <i class="fas fa-scroll"></i></a>
-          </div>
-        </div>
+      <div class="card-grid" id="creations-cards">
+        <!-- 卡片将由JavaScript动态加载 -->
       </div>
     </div>
   </section>
@@ -191,7 +117,7 @@
       <h2 class="section-title">绘卷之厅</h2>
       <div class="cards-description">
         <h3>散落的画卷</h3>
-        <a href="#">查看全部 <i class="fas fa-arrow-right"></i></a>
+        <a href="./gallery.html">查看全部 <i class="fas fa-arrow-right"></i></a>
       </div>
       
       <div class="gallery-carousel">
@@ -212,35 +138,34 @@
       </div>
     </div>
   </section>
-  
 </main>
 
-<!-- 页脚 -->
-<footer>
-  <div class="container">
-    <div class="footer-logo">永恒童话回廊 / EnD.C</div>
-    <div class="footer-subtitle">一个收藏梦境与故事的私人回廊</div>
-    <div class="footer-subtitle">一个编织魔法与热爱的童话世界</div>
-    
-    <div class="social-links">
-      <a href="#"><i class="fab fa-qq"></i></a>
-      <a href="https://space.bilibili.com/3494362195429540?spm_id_from=333.1007.0.0" target="_blank"><i class="fab fa-bilibili"></i></a>
-      <a href="https://music.163.com/#/user/home?id=7927715901" target="_blank"><i class="fas fa-music"></i></a>
-      <a href="https://github.com/EienTokei" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
-    
-    <div class="copyright">
-      &copy; 2025 纸上之恋的永恒归所 | EienTokei
-    </div>
-  </div>
-</footer>
+<!-- 页脚组件将在此动态加载 -->
+<div id="footer-container"></div>
 
+<!-- 数据文件 -->
+<script src="./data/index-data.js"></script>
+
+<!-- 通用工具 -->
+<script src="./js/common.js"></script>
+<script src="./js/navigation.js"></script>
+
+<!-- 组件 -->
+<script src="./components/card.js"></script>
+<script src="./components/gallery-carousel.js"></script>
+
+<!-- 页面专用逻辑 -->
 <script src="./js/index.js"></script>
-<script src="./js/gallery-carousel.js"></script>
+
+<!-- 初始化 -->
 <script>
-  // 初始化画廊轮播
   document.addEventListener('DOMContentLoaded', function() {
-    initGalleryCarousel();
+    // 加载组件
+    loadComponent('navbar', 'navbar-container', { isHomepage: true });
+    loadComponent('footer', 'footer-container');
+    
+    // 初始化页面内容
+    initIndexPage();
   });
 </script>
 </body>

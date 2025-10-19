@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="./">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <title>绘卷之厅 | 永恒童话回廊</title>
+</head>
+<body>
+<!-- 导航栏组件将在此动态加载 -->
+<div id="navbar-container"></div>
+
+<main>
+  <section id="stories">
+    <div class="container section-container">
+      <h2 class="section-title">绘卷之厅</h2>
+      <!-- 卡片网格 -->
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-image" style="background-image: url('/images/tale-hover.webp');"></div>
+          <div class="gallery-overlay">
+            <h4>翡翠的故事</h4>
+            <p>日向彼方的受诅咒物语</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image" style="background-image: url('/images/tale-hover.webp');"></div>
+          <div class="gallery-overlay">
+            <h4>红宝石的纺线</h4>
+            <p>命运红线的恋爱喜剧</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image" style="background-image: url('/images/tale-hover.webp');"></div>
+          <div class="gallery-overlay">
+            <h4>青色的奋斗记</h4>
+            <p>月社妃的存在危机</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item">
+          <div class="gallery-image" style="background-image: url('/images/tale-hover.webp');"></div>
+          <div class="gallery-overlay">
+            <h4>紫水晶的传说</h4>
+            <p>观星少女的都市怪谈</p>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </section>
+</main>
+
+<!-- 页脚组件将在此动态加载 -->
+<div id="footer-container"></div>
+
+<!-- 通用工具 -->
+<script src="./js/common.js"></script>
+<script src="./js/navigation.js"></script>
+
+<!-- 初始化 -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 加载组件
+    loadComponent('navbar', 'navbar-container', { isHomepage: false });
+    loadComponent('footer', 'footer-container');
+  });
+</script>
+
+</body>
+</html>

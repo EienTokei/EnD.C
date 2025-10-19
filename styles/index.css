@@ -1,59 +1,5 @@
-:root {
-  /* 颜色变量 */
-  --color-parchment: #F8F4E9;
-  --color-light-taupe: #E8DFD2;
-  --color-warm-gray: #5A5243;
-  --color-ink-black: #2A2520;
-  --color-antique-gold: #B38E5D;
-  --color-patina-green: #6B7B6E;
-  --color-faded-jade: #8AAE9D;
-  --color-dull-ruby: #B76E79;
-  --color-dusk-amethyst: #9D8CA0;
-  --color-deep-lapis: #6F8FA2;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Playfair Display', serif;
-  background-color: var(--color-parchment);
-  color: var(--color-warm-gray);
-  line-height: 1.6;
-  width: 100%;
-  overflow-x: hidden;
-  position: relative;
-}
-
-h1, h2, h3, h4 {
-  font-family: 'Cinzel Decorative', 'STKaiti', '华文楷体', 'KaiTi', '楷体', cursive;
-  color: var(--color-ink-black);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-@media (max-width: 576px) {
-  .container {
-    padding: 0 1rem;
-  }
-}
-@media (max-width: 768px) {
-  .container {
-    padding: 0 1.5rem;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    padding: 0 2rem;
-  }
-}
+@import "common.css";
+@import "image-components.css";
 
 /* 头部样式 */
 header {
@@ -104,94 +50,6 @@ header {
 .enter-btn:hover {
   background-color: var(--color-antique-gold);
   color: var(--color-ink-black);
-}
-
-/* 导航栏样式 */
-nav {
-  background-color: var(--color-light-taupe);
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.nav-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.nav-logo {
-  font-family: 'Cinzel Decorative', cursive;
-  font-size: 1.5rem;
-  color: var(--color-antique-gold);
-}
-
-.nav-toggle {
-  display: none; /* 桌面端隐藏 */
-  background: transparent; /* 透明背景 */
-  border: none; /* 无边框 */
-  color: var(--color-antique-gold); /* 图标颜色 */
-  font-size: 1.5rem; /* 图标大小 */
-  cursor: pointer; /* 鼠标悬浮变指针 */
-  padding: 0.5rem;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  transition: max-height 0.3s ease;
-  max-height: 300px;
-}
-
-.nav-links li {
-  margin-left: 2rem;
-}
-
-.nav-links a {
-  color: var(--color-warm-gray);
-  text-decoration: none;
-  transition: color 0.3s ease;
-  display: flex;
-  align-items: center;
-}
-
-.nav-links a i {
-  margin-right: 0.5rem;
-}
-
-.nav-links a:hover {
-  color: var(--color-antique-gold);
-}
-
-@media (max-width: 768px) {
-  .nav-container {
-    flex-wrap: wrap;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-  }
-
-  .nav-links.active {
-    max-height: 300px;
-  }
-
-  .nav-links li {
-    margin: 0.3rem 0;
-    width: 100%;
-    text-align: center;
-  }
 }
 
 /* 主要内容区域 */
@@ -297,30 +155,6 @@ main {
   align-items: center;
 }
 
-.tag {
-  display: inline-block;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  color: white;
-}
-
-.tag-jade {
-  background-color: var(--color-faded-jade);
-}
-
-.tag-ruby {
-  background-color: var(--color-dull-ruby);
-}
-
-.tag-amethyst {
-  background-color: var(--color-dusk-amethyst);
-}
-
-.tag-lapis {
-  background-color: var(--color-deep-lapis);
-}
-
 .about-content {
   display: flex;
   align-items: center;
@@ -338,25 +172,18 @@ main {
   line-height: 2.5rem;
 }
 
-.poem-about {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.banner-hero {
   background-image: url("../images/about.webp");
-  background-size: cover;
-  background-position: right;
-  background-repeat: no-repeat;
-  border-radius: 5px;
-  padding-left: 3rem;
-  transition: background-image 1s ease;
+  justify-content: left;
+  padding: 0 3rem;
 }
 
-.poem-about:hover {
+.banner-hero:hover {
   background-image: url("../images/about-hover.webp");
 }
 
 @media (max-width: 768px) {
-  .poem-about {
+  .banner-hero {
     background-image: url("../images/about-mobile.webp");
     padding:0 1rem;
     font-size: 0.8rem;
@@ -364,7 +191,7 @@ main {
   }
 }
 
-.poem-creations {
+.poem {
   writing-mode: vertical-rl;
   text-orientation: upright;
   letter-spacing: 0.5rem;
@@ -372,23 +199,21 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url("../images/tale.webp");
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
   width: 100%;
   max-width: 100%;
   margin: 1rem 0;
   border-radius: 5px;
-  transition: background-image 1s ease;
 }
 
-.poem-creations:hover {
-  background-image: url("../images/tale-hover.webp");
+.fullscreen-bg {
+  background-image: url('/images/tale.webp');
+}
+.fullscreen-bg:hover {
+ background-image: url("../images/tale-hover.webp");
 }
 
 @media (max-width: 768px) {
-  .poem-creations {
+  .poem {
     line-height: 1rem;
     font-size: 0.8rem;
     letter-spacing: 0.2rem;
@@ -399,50 +224,10 @@ main {
   margin:1rem 0;
   color: var(--color-parchment);
   font-family: 'Cinzel Decorative', cursive;
+  text-shadow: 0 0 5px var(--color-antique-gold),
+  0 0 10px var(--color-antique-gold),
+  0 0 15px var(--color-antique-gold);
 }
-
-/* 页脚样式 */
-footer {
-  background-color: var(--color-ink-black);
-  color: var(--color-light-taupe);
-  padding: 1rem 0;
-  text-align: center;
-}
-
-.footer-logo {
-  font-family: 'Cinzel Decorative', cursive;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--color-antique-gold);
-}
-
-.footer-subtitle {
-  margin-bottom: 1rem;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 1rem 0;
-}
-
-.social-links a {
-  color: var(--color-light-taupe);
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: var(--color-antique-gold);
-}
-
-.copyright {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: var(--color-antique-gold);
-}
-
 
 /* 画廊预览样式 */
 .gallery-carousel {
@@ -485,6 +270,17 @@ footer {
 
 .carousel-caption span {
   color: var(--color-antique-gold);
+}
+
+.carousel-caption h3{
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
+}
+
+.carousel-caption p, .carousel-caption span{
+  font-family: 'Cinzel Decorative', cursive;
+  text-shadow: 0 0 5px var(--color-antique-gold),
+  0 0 10px var(--color-antique-gold),
+  0 0 15px var(--color-antique-gold);
 }
 
 .carousel-slide:hover .carousel-caption {
