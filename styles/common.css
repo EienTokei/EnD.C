@@ -41,17 +41,17 @@ h1, h2, h3, h4 {
 
 @media (max-width: 576px) {
   .container {
-    padding: 0 1rem;
+    padding: 0;
   }
 }
 @media (max-width: 768px) {
   .container {
-    padding: 0 1.5rem;
+    padding: 0 0.5rem;
   }
 }
 @media (min-width: 992px) {
   .container {
-    padding: 0 2rem;
+    padding: 0 1.5rem;
   }
 }
 

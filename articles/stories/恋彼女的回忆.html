@@ -316,14 +316,13 @@
     
     loadComponent('navbar', 'navbar-container', {isHomePage: false});
     loadComponent('footer', 'footer-container');
-    
-    // 初始化所有遮罩的点击事件
-    document.querySelectorAll('.text-mask, .spoiler-mask, .page-mask').forEach(mask => {
-      mask.addEventListener('click', function() {
-        this.classList.toggle('active');
-      });
-    });
 
+  });
+  // 初始化所有遮罩的点击事件
+  document.querySelectorAll('.text-mask, .spoiler-mask, .page-mask').forEach(mask => {
+    mask.addEventListener('click', function() {
+      this.classList.toggle('active');
+    });
   });
 </script>
 </body>

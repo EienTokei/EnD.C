@@ -106,10 +106,16 @@ figcaption {
 }
 
 .article-body {
-  padding: 1rem 1rem;
+  padding: 1rem 2rem;
   border-radius: 5px;
   line-height: 1.8;
   background-color: var(--color-light-taupe);
+}
+
+@media (max-width: 768px) {
+  .article-body {
+    padding: 1rem 0.5rem;
+  }
 }
 
 .article-body section {
