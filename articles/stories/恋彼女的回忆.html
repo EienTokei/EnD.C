@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="../../">
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="../../">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles/article.css">
   <title>恋彼女的回忆 | 恋爱日记</title>
+  <link rel="icon" href="./images/icon-16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="./images/icon-32.png" sizes="32x32" type="image/png">
+  
+  <meta name="description" content="一段关于《恋彼女》的游戏体验记录，描述了与姬野星奏等角色的情感故事，以及对青春、遗憾和回忆的思考。">
+  <meta name="keywords" content="恋彼女,galgame,恋爱日记,姬野星奏,游戏评测,游戏体验,青春回忆,EienTokei">
+  <meta name="author" content="EienTokei">
+  <meta name="publish-date" content="2023-12-12">
+  <link rel="canonical" href="https://eientokei.github.io/EnD.C/articles/stories/恋彼女的回忆.html">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="恋彼女的回忆 | 恋爱日记">
+  <meta property="og:image" content="https://s3.bmp.ovh/imgs/2025/10/18/21dcacf666dc06aa.webp">
+  <meta property="og:url" content="https://eientokei.github.io/EnD.C/articles/stories/恋彼女的回忆.html">
+  <meta property="og:description" content="一段关于《恋彼女》的游戏体验记录，描述了与姬野星奏等角色的情感故事。">
+  <meta property="og:site_name" content="EnD.C - 恋爱日记">
+  <meta property="article:publish_time" content="2023-12-12T00:00:00+08:00">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null,this.rel='stylesheet'">
+  <link rel="preload" href="./styles/article.css" as="style" onload="this.onload=null,this.rel='stylesheet'">
+  <link rel="preload" href="./js/common.js" as="script">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
     .banner-hero {
       background-image: url('https://s3.bmp.ovh/imgs/2025/10/19/59135841b8ba22a3.webp');
@@ -44,7 +68,7 @@
         </div>
         <div class="meta-item">
           <i class="fas fa-clock"></i>
-          <span>推荐阅读时间：5分钟</span>
+          <span>阅读时间：5分钟</span>
         </div>
         <div class="meta-item">
           <span class="tag tag-ruby">追忆</span>
@@ -134,7 +158,7 @@
             </div>
           </div>
           
-          <p>星奏要告白的那一段当时我真的是非常紧张的，翻得很慢，看得很仔细，很在意她的回答，怎么就跑开了呢，不过也不是不能理解，对方也紧张死了嘛</p>
+          <p>星奏要告白的那一段当时我真的是非常紧张的，翻得很慢，看得很仔细，很在意她的回答，怎么就跑开了呢，不过也不是不能理解，紧张死了嘛</p>
           <p>游戏中男主还不断强调自己被星奏甩了，弄的我也很难过</p>
           
           <div class="story-divider">
@@ -248,10 +272,32 @@
       </div>
       
       <div class="article-actions">
-        <a href="#" class="action-btn">
-          <i class="fas fa-share-alt"></i> 分享文章
-        </a>
-        <div>
+        <div class="share-container" id="shareContainer">
+          <button class="action-btn share-btn" id="shareBtn">
+            <i class="fas fa-share-alt"></i> 分享文章
+          </button>
+          
+          <div class="share-dropdown" id="shareDropdown">
+            <a href="#" class="share-option weibo" data-platform="weibo">
+              <i class="fab fa-weibo"></i> 分享到微博
+            </a>
+            <a href="#" class="share-option wechat" data-platform="wechat">
+              <i class="fab fa-weixin"></i> 分享到微信
+            </a>
+            <a href="#" class="share-option qq" data-platform="qq">
+              <i class="fab fa-qq"></i> 分享到QQ
+            </a>
+            <a href="#" class="share-option twitter" data-platform="twitter">
+              <i class="fab fa-twitter"></i> 分享到Twitter
+            </a>
+            <a href="#" class="share-option link" data-platform="link" id="copyLinkBtn">
+              <i class="fas fa-link"></i> 复制链接
+            </a>
+          </div>
+        </div>
+
+        
+        <div class="nav-buttons">
           <a href="#" class="action-btn">
             <i class="fas fa-arrow-left"></i> 上一篇
           </a>
@@ -309,20 +355,160 @@
 <!-- 页脚 -->
 <div id="footer-container"></div>
 
-<script src="/js/common.js"></script>
-<script>
-  // 简单的交互效果
-  document.addEventListener('DOMContentLoaded', function() {
-    
-    loadComponent('navbar', 'navbar-container', {isHomePage: false});
-    loadComponent('footer', 'footer-container');
+<!-- 微信二维码模态框 -->
+<div class="qrcode-modal" id="qrcodeModal">
+  <div class="qrcode-content">
+    <h3>微信分享</h3>
+    <p>扫描二维码分享到微信</p>
+    <div class="qrcode-image">
+      <!-- 在实际项目中这里应该是真实的二维码 -->
+      微信二维码图片
+    </div>
+    <button class="close-modal" id="closeModal">关闭</button>
+  </div>
+</div>
 
-  });
+<!-- 提示信息 -->
+<div class="toast" id="toast">链接已复制到剪贴板</div>
+
+<script src="js/common.js"></script>
+<script>
   // 初始化所有遮罩的点击事件
   document.querySelectorAll('.text-mask, .spoiler-mask, .page-mask').forEach(mask => {
     mask.addEventListener('click', function() {
       this.classList.toggle('active');
     });
+  });
+  // 简单的交互效果
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    loadComponent('navbar', 'navbar-container', {isHomePage: false});
+    loadComponent('footer', 'footer-container');
+    
+    const shareContainer = document.getElementById('shareContainer');
+    const shareBtn = document.getElementById('shareBtn');
+    const shareDropdown = document.getElementById('shareDropdown');
+    const copyLinkBtn = document.getElementById('copyLinkBtn');
+    const toast = document.getElementById('toast');
+    const qrcodeModal = document.getElementById('qrcodeModal');
+    const closeModal = document.getElementById('closeModal');
+    
+    // 当前页面信息
+    const pageUrl = window.location.href;
+    const pageTitle = document.title;
+    
+    // 切换分享下拉菜单显示/隐藏
+    shareBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      shareContainer.classList.toggle('active');
+    });
+    
+    // 点击页面其他区域关闭分享菜单
+    document.addEventListener('click', function() {
+      shareContainer.classList.remove('active');
+    });
+    
+    // 阻止分享菜单内的点击事件冒泡
+    shareDropdown.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+    
+    // 分享到不同平台
+    document.querySelectorAll('.share-option').forEach(option => {
+      option.addEventListener('click', function(e) {
+        e.preventDefault();
+        const platform = this.getAttribute('data-platform');
+        
+        switch(platform) {
+          case 'weibo':
+            shareToWeibo();
+            break;
+          case 'wechat':
+            shareToWechat();
+            break;
+          case 'qq':
+            shareToQQ();
+            break;
+          case 'twitter':
+            shareToTwitter();
+            break;
+          case 'link':
+            copyToClipboard();
+            break;
+        }
+        
+        // 关闭分享菜单
+        shareContainer.classList.remove('active');
+      });
+    });
+    
+    // 分享到微博
+    function shareToWeibo() {
+      const shareUrl = `http://service.weibo.com/share/share.php?url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(pageTitle)}`;
+      window.open(shareUrl, '_blank', 'width=615,height=505');
+    }
+    
+    // 分享到微信
+    function shareToWechat() {
+      // 显示二维码模态框
+      qrcodeModal.classList.add('active');
+    }
+    
+    // 分享到QQ
+    function shareToQQ() {
+      const shareUrl = `https://connect.qq.com/widget/shareqq/index.html?url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(pageTitle)}`;
+      window.open(shareUrl, '_blank', 'width=615,height=505');
+    }
+    
+    // 分享到Twitter
+    function shareToTwitter() {
+      const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(pageTitle)}&url=${encodeURIComponent(pageUrl)}`;
+      window.open(shareUrl, '_blank', 'width=615,height=505');
+    }
+    
+    // 复制链接到剪贴板
+    function copyToClipboard() {
+      navigator.clipboard.writeText(pageUrl).then(() => {
+        // 显示成功提示
+        showToast('链接已复制到剪贴板');
+        
+        // 添加复制成功样式
+        copyLinkBtn.classList.add('copy-success');
+        copyLinkBtn.innerHTML = '<i class="fas fa-check"></i> 已复制';
+        
+        // 2秒后恢复原状
+        setTimeout(() => {
+          copyLinkBtn.classList.remove('copy-success');
+          copyLinkBtn.innerHTML = '<i class="fas fa-link"></i> 复制链接';
+        }, 2000);
+      }).catch(err => {
+        console.error('复制失败:', err);
+        showToast('复制失败，请手动复制链接');
+      });
+    }
+    
+    // 显示提示信息
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+    
+    // 关闭二维码模态框
+    closeModal.addEventListener('click', function() {
+      qrcodeModal.classList.remove('active');
+    });
+    
+    // 点击模态框背景关闭
+    qrcodeModal.addEventListener('click', function(e) {
+      if (e.target === qrcodeModal) {
+        qrcodeModal.classList.remove('active');
+      }
+    });
+
   });
 </script>
 </body>

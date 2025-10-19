@@ -97,6 +97,7 @@ class NavigationManager {
             const section = link.getAttribute('data-section');
 
             if (!this.isHomepage) {
+
                 if (currentPage === section) {
                     // 如果当前页面就是目标页面，使用锚点链接
                     link.setAttribute('href', `#${section}`);

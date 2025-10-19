@@ -206,7 +206,7 @@ main {
 }
 
 .fullscreen-bg {
-  background-image: url('/images/tale.webp');
+  background-image: url('../images/tale.webp');
 }
 .fullscreen-bg:hover {
  background-image: url("../images/tale-hover.webp");
