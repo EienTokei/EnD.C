@@ -156,10 +156,7 @@ window.onComponentLoaded = function(componentName, container, options) {
         setTimeout(() => {
             const navigation = initNavigation();
 
-            // 如果是首页，设置导航链接为锚点
-            if (options.isHomepage) {
-                navigation.setupNavLinksBehavior();
-            }
+            navigation.setupNavLinksBehavior();
         }, 0);
     }
 };

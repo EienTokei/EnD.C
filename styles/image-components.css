@@ -24,7 +24,7 @@
 
 .media-image {
   flex: 1;
-  min-height: 300px;
+  maspect-ratio: 16/9;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -110,7 +110,7 @@
 }
 
 .caption-image {
-  min-height: 450px;
+  aspect-ratio: 16/9;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -151,7 +151,7 @@
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  height: 270px;
+  height: auto;
   cursor: pointer;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -164,7 +164,7 @@
 
 .gallery-image {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16/9;
   background-size: cover;
   background-position: center;
   transition: transform 0.5s ease;
@@ -201,7 +201,7 @@
 
 @media (max-width: 768px) {
   .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 }
 
@@ -338,7 +338,7 @@
 }
 
 .floating-image .image-placeholder {
-  height: 300px;
+  aspect-ratio: 16/9;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -387,7 +387,7 @@
 }
 
 .character-image {
-  min-height: 270px;
+  aspect-ratio: 16/9;
   background-color: var(--color-dusk-amethyst);
   background-size: cover;
   background-position: center;
@@ -436,7 +436,7 @@
 }
 
 .article-card-image {
-  height: 180px;
+  aspect-ratio: 16/9;
   background-color: var(--color-deep-lapis);
   background-size: cover;
   background-position: center;
